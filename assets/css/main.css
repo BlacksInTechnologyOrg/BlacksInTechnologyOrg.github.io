@@ -1,0 +1,9 @@
+.jumbotron {
+    height: 100vh;
+    margin: 0;
+    background-color: #F2F2F2;
+}
+
+.jumbotron > p.lead > a.btn {
+	background-color: #EF5342;
+}
