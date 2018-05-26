@@ -10,9 +10,44 @@
 <body>
 {{ content }}
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="{{ '/assets/js/tabletop.min.js' | relative_url }}"></script>
+<script type="text/javascript">
+    var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1aSsDMcspgwgaVdotnkne4DorQtTQHDYFTrpgboUMgeg/edit?usp=sharing';
+    $(document).ready( function() {
+      Tabletop.init( { key: public_spreadsheet_url,
+                       callback: showInfo,
+                       parseNumbers: true } );
+                       
+    });
+      
+    function showInfo(data, tabletop) {
+      var source   = $("#bit-resources").html();
+      var template = Handlebars.compile(source);
+      $.each( tabletop.sheets("bitResources").all(), function(i, data) {
+        var html = template(data);
+        $("#content").append(html);
+      });
+    }
+</script>
+{% raw %}
+<script id="bit-resources" type="text/x-handlebars-template">
+    <div class="entry">
+      <h2>{{Name}}!</h2>
+      <h3>age {{Age}}</h3>
+      <div class="body">
+        {{{Description}}}
+      </div>
+    </div>
+</script>
+{% endraw %}
+
 </body>
 
 </html>
