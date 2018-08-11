@@ -16,12 +16,23 @@ footer {
 /*
  * Custom styles
  */
+.navbar {
+    background-color: #EF5342;
+}
 .navbar-brand {
     font-size: 24px;
 }
 
 .navbar-container {
     padding: 20px 0 20px 0;
+}
+
+
+
+#navbar > ul > li > a,
+#brand {
+    color: white !important;
+
 }
 
 .navbar.navbar-fixed-top.fixed-theme {
@@ -48,9 +59,8 @@ footer {
 }
 
 .jumbotron {
-    height: 100vh;
     margin: 0;
-    background-color: #F2F2F2;
+    background-color: white !important;
 }
 
 .jumbotron > p.lead > a.btn {

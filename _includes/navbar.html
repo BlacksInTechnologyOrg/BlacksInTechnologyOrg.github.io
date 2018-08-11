@@ -1,0 +1,32 @@
+<nav id="header" class="navbar navbar-fixed-top">
+    <div id="header-container" class="container navbar-container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a id="brand" class="navbar-brand" href="{{site.url}}">BIT Github</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                {% assign resources = site.data.projects["resources"] %}
+                <li class="active"><a href="{{site.url}}{{resources.slug}}">Resources</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Projects
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                    {% for project in site.data.projects["projects"] %}
+                        {% if project.slug %}
+                        <li><a href="{{site.url}}{{project.slug}}">{{project.name}}</a></li>
+                        {% else %}
+                        <li><a href="{{project.url}}">{{project.name}}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.nav-collapse -->
+    </div><!-- /.container -->
+</nav><!-- /.navbar -->

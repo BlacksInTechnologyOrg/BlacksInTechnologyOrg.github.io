@@ -1,0 +1,21 @@
+# Data for Resource navigation button in Navbar
+resources:
+  name: BIT Resources
+  slug: /bit-resources
+  url: https://github.com/BlacksInTechnologyOrg/bit-resources
+
+
+# Add Projects below. Just copy/paste an existing object and replace with your project information.
+# If your project doesn't have a slug you can omit it. (usually due to not associating your project with the BIT organization Repo)
+projects:
+- name: BIT Resources
+  slug: /bit-resources
+  url: https://github.com/BlacksInTechnologyOrg/bit-resources
+
+- name: BIT Job Board 
+  slug: /bit-job-board
+  url: https://github.com/BlacksInTechnologyOrg/bit-job-board
+
+- name: BIT Greetings Slack Bot
+  slug: /bit-slack-greeting-bot
+  url: https://github.com/BlacksInTechnologyOrg/bit-slack-greeting-bot
