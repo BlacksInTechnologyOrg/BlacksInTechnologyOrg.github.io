@@ -13,7 +13,6 @@ projects:
   url: https://github.com/BlacksInTechnologyOrg/bit-resources
 
 - name: BIT Job Board 
-  slug: /bit-job-board
   url: https://github.com/BlacksInTechnologyOrg/bit-job-board
 
 - name: BIT Greetings Slack Bot
